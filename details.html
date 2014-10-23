@@ -48,10 +48,9 @@
 
       <!-- WRAP PERSONAL DETAILS FORM IN CHILD PANEL --> 
       <div id="dvPersonalDetails">
-        <div id="dvPersonalDetailsAlert" class="alert alert-warning personalDetailsAlert">Error Message</div>
+        <div id="dvPersonalDetailsAlert" class="alert alert-warning personalDetailsAlert">Please enter all details</div>
         <h1>Please enter your details</h1>
         <p>In order to provide you with a quote, we need a few details. Please complete the form below. Thanks.</p>
-
         <div class="row">
           <form class="form-horizontal">
 
@@ -72,15 +71,15 @@
           <div class="form-group">
             <label for="genderInput" class="control-label col-md-2">Gender </label>
             <div class="col-md-4">
-          <input type="Radio" Name="Gender" Value="Male">Male
-           <input type="Radio" Name="Gender" Value="Female">Female
+          <input id="maleCheck" type="Radio" Name="Gender" Value="Male">Male
+           <input id="femaleCheck" type="Radio" Name="Gender" Value="Female">Female
             </div>
           </div>
           
           <div class="form-group">
             <label for="townInput" class="control-label col-md-2">Town/City </label>
             <div class="col-md-4">
-              <input id="townAge" type="text" name"ageInput" class="form-control personalDetails" placeholder="Town/City" />
+              <input id="townAge" type="text" name"townInput" class="form-control personalDetails" placeholder="Town/City" />
             </div>
           </div>
                       
@@ -94,7 +93,8 @@
           <div class="form-group">
             <label for="noclaimsInput" class="control-label col-md-2">No Claims Bonus (in years) </label>
               <div class="col-md-4">
-              <select name="Select"class="form-control personalDetails">
+              <select  id= "noclaimsSelect" name="Select"class="form-control personalDetails">
+                <option value=""></option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
