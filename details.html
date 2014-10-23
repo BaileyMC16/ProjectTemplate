@@ -114,15 +114,101 @@
       </div>
 
       <!-- WRAP CAR DETAILS FORM IN CHILD PANEL -->
-      <div id="dvCarDetails" class="dvCarDetails">
+     <div id="dvCarDetails" class="dvCarDetails">
+        <div id="dvCarDetailsAlert" class="alert alert-warning carDetailsAlert">Please enter your car details</div>
+        <h1>Please enter your details</h1>
+        <div class="row">
+          <form class="form-horizontal">
+
         <!-- Code for the car details section to be added here -->
+
+       <div class="form-group">
+            <label for="manufacturerInput" class="control-label col-md-2">Manufacturer </label>
+              <div class="col-md-4">
+              <select  id= "manufacturerSelect" name="Select"class="form-control personalDetails">
+                <option value="Select">Select</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Mini">Mini</option>
+                <option value="Toyota">Toyota</option>
+              </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modelInput" class="control-label col-md-2">Car Model</label>
+              <div class="col-md-4">
+                <input id="txtModel" type="text" name="modelInput" class="form-control personalDetails" placeholder="Car Model" />
+              </div>
+            </div>
+
+            <div class="form-group">
+            <label for="carAgeInput" class="control-label col-md-2">Car Age </label>
+            <div class="col-md-4">
+              <input id="txtCarAge" type="text" name"CarAgeInput" class="form-control personalDetails" placeholder="Car Age" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="engineInput" class="control-label col-md-2">Engine Size </label>
+            <div class="col-md-4">
+              <input id="txtEngine" type="text" name"engineInput" class="form-control personalDetails" placeholder="Engine Size" />
+            </div>
+          </div>
+             
+             <div class="form-group">
+            <label for="storageInput" class="control-label col-md-2">Storage </label>
+              <div class="col-md-4">
+              <select  id= "storageSelect" name="Select"class="form-control personalDetails">
+                <option value="Select">Select</option>
+                <option value="Garage">Garage</option>
+                <option value="Driveway">Driveway</option>
+                <option value="Cul-De-Sac">Cul-De-Sac</option>
+                <option value="Public Road">Public Road</option>
+              </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+            <label for="valueInput" class="control-label col-md-2">Estimated value </label>
+            <div class="col-md-4">
+              <input id="txtValue" type="text" name"valueInput" class="form-control personalDetails" placeholder="Estimated value" />
+            </div>
+          </div>
+
+          <input id="btnBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showPersonalDetails()" />
+
+            <input id="btnNext" value="Next" class="btn btn-default btn-sm btn-success" onclick="getQuote()" />
+        </form>
+        </div>
       </div>
+    </div>
 
 
       <!-- WRAP Quote DETAILS FORM IN CHILD PANEL -->
       <div id="dvQuoteDetails" class="dvQuoteDetails">
-        <!-- The display fields for the quote will be added here -->
+
+        <h1>Quote</h1>
+      <p>Here is your car quote</p>
+      <div class="row">
+        <form class="form-horizontal">
+          <div class="col-md-4">
+            <label id="txtQuote" class="control-label col-md-2" />Quote :£</label>
+          </div>
+          </form>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-4">
+            <input id="btnQuoteBack" value="back" class="btn btn-success" onclick="showCarDetails()" />
+          </div>
+        </div>
+
       </div>
+
+
+      <!-- The display fields for the quote will be added here -->
 
 <!--#######################################################################################################################################################
      Do not change any of the code below this comment to begin with, it is precompleted so that you get more time doing the actual challenges and not

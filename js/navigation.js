@@ -7,7 +7,7 @@
     $("#personalLink a").click(function(){
       showPersonalDetails(); 
       return false;
-    });
+    })
 
     $("#carLink a").click(function(){
       showCarDetails(); 
@@ -33,6 +33,8 @@
       )
    {
       $("#dvPersonalDetails").hide();
+      $("#dvCarDetails").show();
+      $("#dvQuoteDetails").hide();
    }
    else{
     
@@ -45,36 +47,49 @@
   }
 
   function showPersonalDetails() {
+    $("#dvPersonalDetails").show();
+      $("#dvCarDetails").hide();
+      $("#dvQuoteDetails").hide();
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
   }
 
   function showQuoteDetails() {
+    $("#dvQuoteDetails").show();
+      $("#dvCarDetails").hide();
+      $("#dvPersonalDetails").hide();
       // Hide the car details section (dvCarDetails)
       // Hide the personal details section (dvQuoteDetails)
       // Show the quote section (dvPersonalDetails)
   }
 
   function getQuote() {
-
+    alert('here');
     // Perform validation to test that all data has been entered
-     // Specify the validation rules
+    // Specify the validation rules
 
     // if (/* Page is Valid */)
     // {
 
     //   // Get the values from the page elements that you need to create your JSON
-
-    //   $.ajax({
-    //       type: "GET",
-    //       url: "http://localhost:53753/api/rating/CalculateRates",
-    //       data: { /* create JSON here */ }
-    //     }).done(function(msg) {
-    //       // Put the return value into Label created on quote details
-    //       // Hide the Car Details section
-    //       // Display the quote details page
-    //   });
+    var name = $("#txtName").val()
+    var gender =$("#dvPersonalDetails input:radio[name=rdoGender]:checked").val();
+    var age =$ ("txtAge").val();
+    var yearsNoClaims =$ ("#noclaimsSelect option:selected").val();
+    var costOfCar =$("#txtModelEstValue").val();
+    var carStorage =$("#storageSelect option:selected").val();
+      $.ajax({
+          type: "GET",
+          url: "http://lit-wrkexp-01.lit.lmig.com:8080/api/calculateRates",
+          data: {gender:gender, age:age, noclaimsSelect:yearsNoClaims, costOfCar:costOfCar, carStorage:carStorage}
+        }).done(function(msg) {
+          showQuoteDetails();
+          // Put the return value into Label created on quote details
+          // Hide the Car Details section
+          // Display the quote details page
+          $('#txtQuote').html(msg.result);
+      });
   }
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
